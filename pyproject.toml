@@ -1,0 +1,31 @@
+[project]
+name = "video-depth-anything"
+version = "0.1.0"
+requires-python = ">=3.8,<3.12"
+dependencies = [
+    "numpy==1.23.1",
+    "torch==2.1.1",
+    "torchvision==0.16.1",
+    "opencv-python",
+    "matplotlib",
+    "pillow",
+    "imageio==2.19.3",
+    "imageio-ffmpeg==0.4.7",
+    "decord",
+    "xformers==0.0.23",
+    "einops==0.4.1",
+    "easydict",
+    "tqdm",
+    "OpenEXR==3.3.1"
+]
+
+[project.scripts]
+video-depth-anything = "run:main"
+post_install = "post_install:post_install"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
